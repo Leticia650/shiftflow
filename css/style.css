@@ -1,0 +1,1118 @@
+/* =========================
+CONFIGURAÇÕES GERAIS
+========================= */
+
+*{
+margin: 0;
+padding: 0;
+
+box-sizing: border-box;
+}
+
+:root{
+
+ --background:
+    #071a2b;
+
+--background-light:
+    #0d2d45;
+
+--card:
+    rgba(
+        255,
+        255,
+        255,
+        0.07
+    );
+
+--border:
+    rgba(
+        255,
+        255,
+        255,
+        0.12
+    );
+
+--primary:
+    #2dd4bf;
+
+--primary-dark:
+    #159e91;
+
+--text:
+    #effaff;
+
+--text-secondary:
+    #9eb9c8;
+
+--danger:
+    #ff6b6b;
+
+--warning:
+    #ffbd59;
+
+--success:
+    #57d68d;
+
+}
+
+body {
+
+min-height: 100vh;
+
+padding:
+    45px
+    20px;
+
+font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+color:
+    var(--text);
+
+background:
+
+    radial-gradient(
+
+        circle
+        at
+        top
+        right,
+
+        #164d68,
+
+        transparent
+        35%
+
+    ),
+
+    linear-gradient(
+
+        135deg,
+
+        var(--background),
+
+        var(--background-light)
+
+    );
+
+}
+
+/* =========================
+CONTAINER
+========================= */
+
+.container {
+
+width: 100%;
+
+max-width:
+    1150px;
+
+margin:
+    0 auto;
+
+}
+
+/* =========================
+CABEÇALHO
+========================= */
+
+.header {
+
+margin-bottom:
+    30px;
+
+}
+
+.eyebrow {
+
+margin-bottom:
+    10px;
+
+color:
+    var(--primary);
+
+font-size:
+    12px;
+
+font-weight:
+    bold;
+
+letter-spacing:
+    3px;
+
+}
+
+.header h1 {
+
+margin-bottom:
+    10px;
+
+font-size:
+    46px;
+
+}
+
+.header-description {
+
+color:
+    var(--text-secondary);
+
+font-size:
+    17px;
+
+}
+
+/* =========================
+CARDS
+========================= */
+
+.card {
+
+margin-bottom:
+    25px;
+
+padding:
+    30px;
+
+border:
+    1px solid
+    var(--border);
+
+border-radius:
+    22px;
+
+background:
+    var(--card);
+
+backdrop-filter:
+    blur(15px);
+
+box-shadow:
+
+    0
+    20px
+    50px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.2
+    );
+
+}
+
+/* =========================
+TÍTULO DAS SEÇÕES
+========================= */
+
+.section-title {
+
+display:
+    flex;
+
+align-items:
+    center;
+
+gap:
+    15px;
+
+margin-bottom:
+    25px;
+
+}
+
+.section-title span {
+
+display:
+    grid;
+
+width:
+    45px;
+
+height:
+    45px;
+
+place-items:
+    center;
+
+border-radius:
+    13px;
+
+background:
+
+    linear-gradient(
+
+        135deg,
+
+        var(--primary),
+
+        #2484c6
+
+    );
+
+font-weight:
+    bold;
+
+}
+
+.section-title h2 {
+
+margin-bottom:
+    5px;
+
+font-size:
+    22px;
+
+}
+
+.section-title p {
+
+color:
+    var(--text-secondary);
+
+font-size:
+    14px;
+
+}
+
+/* =========================
+FORMULÁRIOS
+========================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.lot-row {
+
+    display: grid;
+
+    grid-template-columns:
+
+        1fr
+        1fr
+        auto
+        auto;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+
+}
+.input-group {
+
+display:
+    flex;
+
+flex-direction:
+    column;
+
+gap:
+    9px;
+
+}
+
+.input-group label {
+
+color:
+    #00000000;
+
+font-size:
+    14px;
+
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+
+width:
+    100%;
+
+padding:
+    14px;
+
+border:
+
+    1px solid
+
+    rgba(
+        255,
+        255,
+        255,
+        0.12
+    );
+
+border-radius:
+    11px;
+
+outline:
+    none;
+
+background:
+
+    rgba(
+        0,
+        0,
+        0,
+        0.2
+    );
+
+color:
+    white;
+
+font-size:
+    15px;
+
+transition:
+
+    border
+    0.2s,
+
+    box-shadow
+    0.2s;
+
+}
+
+/* DEIXAR AS OPÇÕES DO SELECT ESCURAS */
+
+.input-group select option {
+
+    background-color:
+        #1b3344;
+
+    color:
+        white;
+
+}
+
+.input-group textarea {
+
+min-height:
+    110px;
+
+resize:
+    vertical;
+
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+
+border-color:
+    var(--primary);
+
+box-shadow:
+
+    0
+    0
+    0
+    3px
+
+    rgba(
+        45,
+        212,
+        191,
+        0.13
+    );
+
+}
+
+/* =========================
+PROGRESSO
+========================= */
+
+.production-info {
+
+margin-top:
+    25px;
+
+}
+
+.progress-container {
+
+width:
+    100%;
+
+height:
+    15px;
+
+overflow:
+    hidden;
+
+border-radius:
+    30px;
+
+background:
+
+    rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+}
+
+.progress-bar {
+
+width:
+    0%;
+
+height:
+    100%;
+
+border-radius:
+    inherit;
+
+background:
+
+    linear-gradient(
+
+        90deg,
+
+        var(--primary),
+
+        #3b82f6
+
+    );
+
+transition:
+    width
+    0.4s;
+
+}
+
+.progress-details {
+
+display:
+    flex;
+
+justify-content:
+    space-between;
+
+margin-top:
+    12px;
+
+}
+
+#progress-value {
+
+color:
+    var(--primary);
+
+}
+
+#half-message {
+
+color:
+    var(--text-secondary);
+
+}
+
+/* =========================
+CHECKBOXES
+========================= */
+
+.checkbox-grid {
+
+display:
+    grid;
+
+grid-template-columns:
+
+    repeat(
+        3,
+        1fr
+    );
+
+gap:
+    12px;
+
+margin-bottom:
+    25px;
+
+}
+
+.check-option,
+.radio-option {
+
+display:
+    flex;
+
+align-items:
+    center;
+
+gap:
+    10px;
+
+padding:
+    13px;
+
+border:
+
+    1px solid
+
+    rgba(
+        255,
+        255,
+        255,
+        0.1
+    );
+
+border-radius:
+    10px;
+
+cursor:
+    pointer;
+
+background:
+
+    rgba(
+        255,
+        255,
+        255,
+        0.03
+    );
+
+transition:
+    0.2s;
+
+}
+
+.check-option,
+.radio-option {
+
+border-color:
+    var(--primary);
+
+transform:
+    translateY(-2px);
+
+}
+
+.check-option input,
+.radio-option input {
+
+accent-color:
+    var(--primary);
+
+}
+
+/* =========================
+LIMPEZA
+========================= */
+
+.cleaning-options {
+
+display:
+    flex;
+
+gap:
+    15px;
+
+margin-bottom:
+    25px;
+
+}
+
+/* =========================
+BOTÕES
+========================= */
+
+.secondary-button,
+.save-button {
+
+border:
+    none;
+
+color:
+    white;
+
+font-weight:
+    bold;
+
+cursor:
+    pointer;
+
+transition:
+    0.2s;
+
+}
+
+.secondary-button {
+
+margin-top:
+    20px;
+
+padding:
+    12px
+    18px;
+
+border-radius:
+    10px;
+
+background:
+
+    rgba(
+        45,
+        212,
+        191,
+        0.14
+    );
+
+}
+
+.secondary-button {
+
+background:
+
+    rgba(
+        45,
+        212,
+        191,
+        0.25
+    );
+
+}
+
+.save-button {
+
+width:
+    100%;
+
+margin-bottom:
+    25px;
+
+padding:
+    19px;
+
+border-radius:
+    14px;
+
+background:
+
+    linear-gradient(
+
+        90deg,
+
+        var(--primary-dark),
+
+        #2479c2
+
+    );
+
+font-size:
+    17px;
+
+}
+
+.save-button {
+
+transform:
+    translateY(-3px);
+
+box-shadow:
+
+    0
+    15px
+    35px
+
+    rgba(
+        45,
+        212,
+        191,
+        0.2
+    );
+
+}
+
+/* =========================
+MATERIAIS
+========================= */
+
+.material-card {
+
+margin-bottom:
+    18px;
+
+padding:
+    20px;
+
+border:
+
+    1px solid
+
+    rgba(
+        255,
+        255,
+        255,
+        0.1
+    );
+
+border-radius:
+    15px;
+
+background:
+
+    rgba(
+        0,
+        0,
+        0,
+        0.15
+    );
+
+}
+
+.material-header {
+
+display:
+    flex;
+
+justify-content:
+    space-between;
+
+align-items:
+    center;
+
+margin-bottom:
+    18px;
+
+}
+
+.material-header h3 {
+
+color:
+    var(--primary);
+
+}
+
+.remove-button {
+
+padding:
+    8px
+    12px;
+
+border:
+    none;
+
+border-radius:
+    8px;
+
+color:
+    white;
+
+background:
+    #b94052;
+
+cursor:
+    pointer;
+
+}
+
+.lot-row {
+
+display:
+    grid;
+
+grid-template-columns:
+
+    1fr
+    1fr
+    auto;
+
+gap:
+    12px;
+
+margin-bottom:
+    12px;
+
+}
+
+.lot-row input {
+
+padding:
+    12px;
+
+border:
+
+    1px solid
+
+    rgba(
+        255,
+        255,
+        255,
+        0.12
+    );
+
+border-radius:
+    9px;
+
+outline:
+    none;
+
+color:
+    white;
+
+background:
+
+    rgba(
+        0,
+        0,
+        0,
+        0.2
+    );
+
+}
+
+.add-lot-button {
+
+padding:
+    10px
+    14px;
+
+border:
+
+    1px solid
+
+    var(--primary);
+
+border-radius:
+    8px;
+
+color:
+    var(--primary);
+
+background:
+    transparent;
+
+cursor:
+    pointer;
+
+}
+
+/* =========================
+HISTÓRICO
+========================= */
+
+.history-card {
+
+margin-bottom:
+    18px;
+
+padding:
+    20px;
+
+border-left:
+
+    4px solid
+
+    var(--primary);
+
+border-radius:
+    12px;
+
+background:
+
+    rgba(
+        255,
+        255,
+        255,
+        0.05
+    );
+
+}
+
+.history-card h3 {
+
+margin-bottom:
+    12px;
+
+}
+
+.history-card p {
+
+margin-bottom:
+    7px;
+
+color:
+    var(--text-secondary);
+
+}
+
+.empty-history {
+
+padding:
+    30px;
+
+text-align:
+    center;
+
+color:
+    var(--text-secondary);
+
+}
+
+/* =========================
+RESPONSIVIDADE
+========================= */
+
+@media (
+max-width: 800px
+) {
+
+.form-grid {
+
+    grid-template-columns:
+        1fr;
+
+}
+
+
+.checkbox-grid {
+
+    grid-template-columns:
+        1fr;
+
+}
+
+
+.cleaning-options {
+
+    flex-direction:
+        column;
+
+}
+
+
+.header h1 {
+
+    font-size:
+        35px;
+
+}
+
+
+.progress-details {
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+}
+
+}
+
+@media (
+max-width: 550px
+) {
+
+body {
+
+    padding:
+        25px
+        12px;
+
+}
+
+
+.card {
+
+    padding:
+        20px;
+
+}
+
+
+.lot-row {
+
+    grid-template-columns:
+        1fr;
+
+}
+
+}
+
+.used-option {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        10px 12px;
+
+    border:
+
+        1px solid
+
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    border-radius:
+        9px;
+
+    color:
+        #c7dce7;
+
+    font-size:
+        14px;
+
+    white-space:
+        nowrap;
+
+    cursor:
+        pointer;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            0.04
+        );
+
+}
+
+
+.used-option input {
+
+    width:
+        17px;
+
+    height:
+        17px;
+
+    accent-color:
+        #2dd4bf;
+
+    cursor:
+        pointer;
+
+}

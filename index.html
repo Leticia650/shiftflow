@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>ShiftFlow</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+
+<main class="container">
+
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+
+        <div>
+
+            <p class="eyebrow">
+                CONTROLE DE PRODUÇÃO
+            </p>
+
+            <h1>
+                🔄 ShiftFlow
+            </h1>
+
+            <p class="header-description">
+
+                Registro inteligente
+                para passagem de turno.
+
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- IDENTIFICAÇÃO -->
+
+    <section class="card">
+
+        <div class="section-title">
+
+            <span>
+                01
+            </span>
+
+            <div>
+
+                <h2>
+                    Identificação da produção
+                </h2>
+
+                <p>
+                    Informe a linha,
+                    o produto e o lote atual.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label for="machine">
+
+                    Linha ou maquinário
+
+                </label>
+
+                <input
+                    type="text"
+                    id="machine"
+                    placeholder="Ex.: Linha 03 - MT6"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="batch">
+
+                    Número do lote
+
+                </label>
+
+                <input
+                    type="text"
+                    id="batch"
+                    placeholder="Ex.: LOTE-2026-001"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="product">
+
+                    Produto em produção
+
+                </label>
+
+                <input
+                    type="text"
+                    id="product"
+                    placeholder="Ex.: Amoxicilina"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="shift">
+
+                    Turno
+
+                </label>
+
+                <select id="shift">
+
+                    <option value="">
+
+                        Selecione
+
+                    </option>
+
+                    <option value="1º turno">
+
+                        1º turno
+
+                    </option>
+
+                    <option value="2º turno">
+
+                        2º turno
+
+                    </option>
+
+                    <option value="3º turno">
+
+                        3º turno
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUÇÃO -->
+
+    <section class="card">
+
+        <div class="section-title">
+
+            <span>
+                02
+            </span>
+
+            <div>
+
+                <h2>
+                    Andamento do lote
+                </h2>
+
+                <p>
+                    Acompanhe o progresso
+                    da produção.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label for="planned">
+
+                    Quantidade planejada
+
+                </label>
+
+                <input
+                    type="number"
+                    id="planned"
+                    min="0"
+                    placeholder="Ex.: 100000"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="produced">
+
+                    Quantidade produzida
+
+                </label>
+
+                <input
+                    type="number"
+                    id="produced"
+                    min="0"
+                    placeholder="Ex.: 52000"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <div class="production-info">
+
+
+            <div class="progress-container">
+
+                <div
+                    id="progress-bar"
+                    class="progress-bar"
+                >
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-details">
+
+                <strong id="progress-value">
+
+                    0%
+
+                </strong>
+
+
+                <span id="half-message">
+
+                    Informe as quantidades.
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- OCORRÊNCIAS -->
+
+    <section class="card">
+
+        <div class="section-title">
+
+            <span>
+                03
+            </span>
+
+            <div>
+
+                <h2>
+                    Ocorrências do turno
+                </h2>
+
+                <p>
+                    Registre falhas,
+                    desvios ou anomalias.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="checkbox-grid">
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="occurrence"
+                    value="Falha de sensor"
+                >
+
+                Falha de sensor
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="occurrence"
+                    value="Falha mecânica"
+                >
+
+                Falha mecânica
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="occurrence"
+                    value="Falha elétrica"
+                >
+
+                Falha elétrica
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="occurrence"
+                    value="Defeito de material"
+                >
+
+                Defeito de material
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="occurrence"
+                    value="Parada de máquina"
+                >
+
+                Parada de máquina
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="occurrence"
+                    value="Outro"
+                >
+
+                Outro
+
+            </label>
+
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="occurrence-description">
+
+                Descreva a ocorrência
+
+            </label>
+
+            <textarea
+                id="occurrence-description"
+                placeholder="Ex.: Sensor apresentou falha intermitente..."
+            ></textarea>
+
+        </div>
+
+    </section>
+
+
+    <!-- AÇÕES -->
+
+    <section class="card">
+
+        <div class="section-title">
+
+            <span>
+                04
+            </span>
+
+            <div>
+
+                <h2>
+                    Ações e status
+                </h2>
+
+                <p>
+                    Informe o que foi feito
+                    e a situação atual.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="checkbox-grid">
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="action"
+                    value="Manutenção acionada"
+                >
+
+                Manutenção acionada
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="action"
+                    value="Ajuste pelo operador"
+                >
+
+                Ajuste pelo operador
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="action"
+                    value="Material substituído"
+                >
+
+                Material substituído
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="action"
+                    value="Material segregado"
+                >
+
+                Material segregado
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="action"
+                    value="Parâmetro ajustado"
+                >
+
+                Parâmetro ajustado
+
+            </label>
+
+
+            <label class="check-option">
+
+                <input
+                    type="checkbox"
+                    name="action"
+                    value="Aguardando avaliação"
+                >
+
+                Aguardando avaliação
+
+            </label>
+
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label for="anomaly-status">
+
+                    Status da anomalia
+
+                </label>
+
+                <select id="anomaly-status">
+
+                    <option value="">
+
+                        Selecione
+
+                    </option>
+
+                    <option value="Sanado">
+
+                        🟢 Sanado
+
+                    </option>
+
+                    <option value="Não sanado">
+
+                        🔴 Não sanado
+
+                    </option>
+
+                    <option value="Em espera">
+
+                        🟡 Em espera
+
+                    </option>
+
+                    <option value="Em acompanhamento">
+
+                        🔵 Em acompanhamento
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="action-description">
+
+                    Detalhamento da ação
+
+                </label>
+
+                <textarea
+                    id="action-description"
+                    placeholder="Descreva o ajuste realizado..."
+                ></textarea>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- MATERIAIS -->
+
+    <section class="card">
+
+        <div class="section-title">
+
+            <span>
+                05
+            </span>
+
+            <div>
+
+                <h2>
+                    Materiais utilizados com troca de lote
+                </h2>
+
+                <p>
+                    Adicione materiais
+                    e seus respectivos lotes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="materials-container">
+
+            <!--
+            Os materiais serão
+            adicionados pelo JavaScript
+            -->
+
+        </div>
+
+
+        <button
+            type="button"
+            id="add-material"
+            class="secondary-button"
+        >
+
+            + Adicionar material
+
+        </button>
+
+    </section>
+
+
+    <!-- LIMPEZA -->
+
+    <section class="card">
+
+        <div class="section-title">
+
+            <span>
+                06
+            </span>
+
+            <div>
+
+                <h2>
+                    Status de limpeza
+                </h2>
+
+                <p>
+                    Informe a próxima limpeza
+                    e o término da campanha.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cleaning-options">
+
+
+            <label class="radio-option">
+
+                <input
+                    type="radio"
+                    name="cleaning"
+                    value="Parcial"
+                >
+
+                Limpeza parcial
+
+            </label>
+
+
+            <label class="radio-option">
+
+                <input
+                    type="radio"
+                    name="cleaning"
+                    value="Completa"
+                >
+
+                Limpeza completa
+
+            </label>
+
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label for="campaign-end">
+
+                    Término da campanha
+
+                </label>
+
+                <input
+                    type="date"
+                    id="campaign-end"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="cleaning-notes">
+
+                    Observações da limpeza
+
+                </label>
+
+                <textarea
+                    id="cleaning-notes"
+                    placeholder="Ex.: Realizar limpeza completa após o término da campanha."
+                ></textarea>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- BOTÃO -->
+
+    <button
+        type="button"
+        id="save-button"
+        class="save-button"
+    >
+
+        💾 Salvar passagem de turno
+
+    </button>
+
+
+    <!-- HISTÓRICO -->
+
+    <section class="card history">
+
+        <div class="section-title">
+
+            <span>
+                07
+            </span>
+
+            <div>
+
+                <h2>
+                    Histórico de registros
+                </h2>
+
+                <p>
+                    Consulte as passagens
+                    de turno salvas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="history-container">
+
+            <p class="empty-history">
+
+                Nenhum registro salvo.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="javascript/script.js"></script>
+
+
+</body>
+
+</html>
