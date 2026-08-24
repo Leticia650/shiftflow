@@ -1916,6 +1916,15 @@ return materials;
 SUPABASE - REGISTROS
 ========================= */
 
+const SUPABASE_URL = "https://dvocbwecshpvcilejfvt.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR2b2Nid2Vjc2hwdmNpbGVqZnZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2MDM3MTEsImV4cCI6MjEwMzE3OTcxMX0.kjpQorhGHsOmdg6T8CTl9cudNZ8e-LQj28DcjxrjRYM";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
 let records = [];
 
 async function loadRecords() {
